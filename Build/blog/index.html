@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Appleseed" />
+    <meta name="generator" content="Ignite v0.5.2" />
+    <title>Blog – My Awesome Site</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="/css/ignite-core.min.css" rel="stylesheet" />
+    <link href="https://www.example.com/blog" rel="canonical" />
+    <script>(function() {
+    function getThemePreference() {
+        return localStorage.getItem('custom-theme') || 'auto';
+    }
+
+    function applyTheme(themeID) {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const lightThemeID = document.documentElement.getAttribute('data-light-theme') || 'light';
+        const darkThemeID = document.documentElement.getAttribute('data-dark-theme') || 'dark';
+        const actualThemeID = themeID === 'auto' ? (prefersDark ? darkThemeID : lightThemeID) : themeID;
+
+        document.documentElement.setAttribute('data-bs-theme', actualThemeID);
+        document.documentElement.setAttribute('data-theme-state', themeID);
+    }
+
+    function applySyntaxTheme() {
+        const syntaxTheme = getComputedStyle(document.documentElement)
+            .getPropertyValue('--syntax-highlight-theme').trim().replace(/"/g, '');
+
+        if (!syntaxTheme) return;
+
+        document.querySelectorAll('link[data-highlight-theme]').forEach(link => {
+            link.setAttribute('disabled', 'disabled');
+        });
+
+        const themeLink = document.querySelector(`link[data-highlight-theme="${syntaxTheme}"]`);
+        if (themeLink) {
+            themeLink.removeAttribute('disabled');
+        }
+    }
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        const currentTheme = getThemePreference();
+        if (currentTheme === 'auto') {
+            applyTheme('auto');
+            applySyntaxTheme();
+        }
+    });
+
+    const savedTheme = getThemePreference();
+    applyTheme(savedTheme);
+    applySyntaxTheme();
+})();
+</script>
+    <meta property="og:site_name" content="Hello World" />
+    <meta property="og:title" content="Blog" />
+    <meta name="twitter:title" content="Blog" />
+    <meta property="og:url" content="https://www.example.com/blog" />
+    <meta name="twitter:domain" content="example.com" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:dnt" content="on" />
+  </head>
+  <body class="container">
+    <div style="padding-bottom: 55px">
+      <header>
+        <nav class="fixed-top navbar navbar-expand-md" style="background-color: rgb(44 62 80 / 100%)">
+          <div class="container">
+            <a href="/" class="d-inline-flex align-items-center navbar-brand"><img src="/images/logo.svg" alt="Brush &amp; Bark" style="width: min(60vw, 200px); height: 100.0%" /></a>
+            <button type="button" class="navbar-toggler btn" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div id="navbarCollapse" class="collapse navbar-collapse">
+              <ul class="navbar-nav mb-2 mb-md-0 col justify-content-end">
+                <li class="nav-item"><a href="/services" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="/reviews" class="nav-link">Reviews</a></li>
+                <li class="nav-item"><a href="/blog" class="nav-link active" aria-current="page">Blog</a></li>
+                <li class="nav-item"><a href="/help" class="nav-link">Help</a></li>
+                <li class="nav-item"><a href="/contact" class="nav-link">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </div>
+    <div>
+      <h1 class="mt-4" style="font-weight: 900; width: 90.0%">OUR BLOG</h1>
+      <p class="lead" style="width: 90.0%">Each month we write a new blog post covering tips, techniques, and other advice for dog owners.</p>
+      <div class="row justify-content-center row-cols-1 row-cols-md-2" style="width: 90.0%">
+        <div class="col align-self-center g-3">
+          <div class="card" style="margin-top: 20px">
+            <div class="card-header">
+              <h2><a href="/blog/secret-life-of-dog-hair">The Secret Life of Dog Hair: From Shedding Woes to Artistic Masterpieces</a></h2>
+            </div>
+            <div class="card-body">
+              <p class="mb-0 card-text">Welcome to the whimsical world of dog grooming, where shedding isn’t just a nuisance—it’s an opportunity for creativity! Have you ever looked at the piles of fur collected after brushing your dog and wondered if there was more to life than just throwing it away? Well, buckle up, pet parents, because we’re about to dive into the absurdly amusing side of dog grooming and explore how your dog’s shedding can be transformed from hairy headache to high art!</p>
+            </div>
+            <div class="card-footer text-body-secondary">
+              <div style="margin-top: -5px">
+                <a rel="tag" href="/tags/fur" class="link-plain"><span class="badge text-bg-primary rounded-pill">Fur</span></a>
+                <a rel="tag" href="/tags/fun" class="link-plain"><span class="badge text-bg-primary rounded-pill">Fun</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col align-self-center g-3">
+          <div class="card" style="margin-top: 20px">
+            <div class="card-header">
+              <h2><a href="/blog/seasonal-grooming-tips">Seasonal Grooming Tips for Every Dog Owner</a></h2>
+            </div>
+            <div class="card-body">
+              <p class="mb-0 card-text">As the seasons change, so do the needs of your furry friend, particularly when it comes to grooming. Whether you’re transitioning from the heat of summer to the chill of autumn, or from the snowy days of winter to the bloom of spring, understanding how to adapt your dog’s grooming routine is essential for their comfort and health. In this blog post, we’ll dive into seasonal grooming tips that every dog owner should know to keep their pet looking and feeling their best throughout the year.</p>
+            </div>
+            <div class="card-footer text-body-secondary">
+              <div style="margin-top: -5px">
+                <a rel="tag" href="/tags/tips" class="link-plain"><span class="badge text-bg-primary rounded-pill">Tips</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col align-self-center g-3">
+          <div class="card" style="margin-top: 20px">
+            <div class="card-header">
+              <h2><a href="/blog/managing-dog-hair-for-allergy-sufferers">The Ultimate Guide to Managing Dog Hair for Allergy Sufferers</a></h2>
+            </div>
+            <div class="card-body">
+              <p class="mb-0 card-text">Are you a dog lover but also an allergy sufferer? It can be challenging to balance the joy of having a furry friend with the discomfort of allergies. Dog grooming salons play a crucial role in helping manage pet allergies, especially through controlling pet hair and dander. Here’s how you can maintain your love for dogs while managing those pesky allergens effectively.</p>
+            </div>
+            <div class="card-footer text-body-secondary">
+              <div style="margin-top: -5px">
+                <a rel="tag" href="/tags/fur" class="link-plain"><span class="badge text-bg-primary rounded-pill">Fur</span></a>
+                <a rel="tag" href="/tags/health" class="link-plain"><span class="badge text-bg-primary rounded-pill">Health</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col align-self-center g-3">
+          <div class="card" style="margin-top: 20px">
+            <div class="card-header">
+              <h2><a href="/blog/importance-of-nail-trimming">The Importance of Nail Trimming for Your Dog’s Health and Comfort</a></h2>
+            </div>
+            <div class="card-body">
+              <p class="mb-0 card-text">Nail trimming is a vital part of dog grooming that is often overlooked by pet owners. While it might seem like a minor detail, regular nail trimming is essential for the health and comfort of your dog. Neglecting this important grooming task can lead to pain, discomfort, and even long-term health issues for your furry friend. This blog post will explore the benefits of regular nail trimming and offer tips on how to make the experience as stress-free as possible for you and your dog.</p>
+            </div>
+            <div class="card-footer text-body-secondary">
+              <div style="margin-top: -5px">
+                <a rel="tag" href="/tags/nails" class="link-plain"><span class="badge text-bg-primary rounded-pill">Nails</span></a>
+                <a rel="tag" href="/tags/health" class="link-plain"><span class="badge text-bg-primary rounded-pill">Health</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col align-self-center g-3">
+          <div class="card" style="margin-top: 20px">
+            <div class="card-header">
+              <h2><a href="/blog/how-to-prevent-matted-dog-hair">How to Manage and Prevent Matted Dog Hair</a></h2>
+            </div>
+            <div class="card-body">
+              <p class="mb-0 card-text">Matted hair is a common problem that many dog owners face, especially those with long-haired or curly-haired breeds. Mats are not just unsightly; they can cause significant discomfort and even lead to skin infections or other health issues. Understanding how to prevent and safely remove mats is crucial for maintaining your dog’s health and comfort. Here’s a comprehensive guide on how to deal with matted dog hair.</p>
+            </div>
+            <div class="card-footer text-body-secondary">
+              <div style="margin-top: -5px">
+                <a rel="tag" href="/tags/fur" class="link-plain"><span class="badge text-bg-primary rounded-pill">Fur</span></a>
+                <a rel="tag" href="/tags/health" class="link-plain"><span class="badge text-bg-primary rounded-pill">Health</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col align-self-center g-3">
+          <div class="card" style="margin-top: 20px">
+            <div class="card-header">
+              <h2><a href="/blog/first-grooming-session">Preparing Your Dog for Their First Grooming Session</a></h2>
+            </div>
+            <div class="card-body">
+              <p class="mb-0 card-text">Introducing your dog to professional grooming is an important step in their care routine. For many dogs and their owners, the first grooming session can be a source of anxiety. Proper preparation can help make this initial experience as enjoyable and stress-free as possible for your furry friend. Here’s a comprehensive guide on how to prepare your dog for their first trip to the grooming salon.</p>
+            </div>
+            <div class="card-footer text-body-secondary">
+              <div style="margin-top: -5px">
+                <a rel="tag" href="/tags/tips" class="link-plain"><span class="badge text-bg-primary rounded-pill">Tips</span></a>
+                <a rel="tag" href="/tags/safety" class="link-plain"><span class="badge text-bg-primary rounded-pill">Safety</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col align-self-center g-3">
+          <div class="card" style="margin-top: 20px">
+            <div class="card-header">
+              <h2><a href="/blog/embracing-eco-friendly-grooming">Embracing Eco-Friendly Grooming Practices for Your Dog</a></h2>
+            </div>
+            <div class="card-body">
+              <p class="mb-0 card-text">In today’s environmentally conscious world, more pet owners are seeking ways to care for their furry friends in a manner that’s kind to the planet. Eco-friendly grooming practices not only benefit the environment but also promote a healthier lifestyle for our pets.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col align-self-center g-3">
+          <div class="card" style="margin-top: 20px">
+            <div class="card-header">
+              <h2><a href="/blog/dog-hairstyles">The Ultimate Guide to Dog Hairstyles: Channeling Your Inner Celebrity</a></h2>
+            </div>
+            <div class="card-body">
+              <p class="mb-0 card-text">Welcome to the world of high-fashion dog grooming, where your pooch doesn’t just get a trim; they get a transformative makeover that could rival any red carpet look! In this blog post, we’ll dive into the delightful world of celebrity-inspired dog hairstyles. Why settle for a basic cut when your furry friend can strut their stuff as the canine version of a pop star, movie icon, or even a royal?</p>
+            </div>
+            <div class="card-footer text-body-secondary">
+              <div style="margin-top: -5px">
+                <a rel="tag" href="/tags/fur" class="link-plain"><span class="badge text-bg-primary rounded-pill">Fur</span></a>
+                <a rel="tag" href="/tags/fun" class="link-plain"><span class="badge text-bg-primary rounded-pill">Fun</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col align-self-center g-3">
+          <div class="card" style="margin-top: 20px">
+            <div class="card-header">
+              <h2><a href="/blog/benefits-of-professional-grooming">The Benefits of Professional Grooming for Your Furry Friend</a></h2>
+            </div>
+            <div class="card-body">
+              <p class="mb-0 card-text">Every dog owner wants the best for their furry friend, and one of the key aspects of ensuring their well-being is maintaining a proper grooming routine. While many pet parents opt for home grooming, the advantages of professional grooming can significantly enhance the health and happiness of your pet. Here’s a closer look at why professional grooming is a worthy investment for every dog owner.</p>
+            </div>
+            <div class="card-footer text-body-secondary">
+              <div style="margin-top: -5px">
+                <a rel="tag" href="/tags/tips" class="link-plain"><span class="badge text-bg-primary rounded-pill">Tips</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col align-self-center g-3">
+          <div class="card" style="margin-top: 20px">
+            <div class="card-header">
+              <h2><a href="/blog/battle-of-bath-time">The Epic Battle of Bath Time: Conquering the Chaos with Capes and Comedy</a></h2>
+            </div>
+            <div class="card-body">
+              <p class="mb-0 card-text">Welcome to the splash zone! For many dog owners, giving their furry friend a bath is about as easy as nailing jelly to a tree. But fear not, intrepid pet parents! Today, we’re diving headfirst into the wacky world of dog bathing with an audacious guide that turns the dreaded dunk into a frolicking fun fest. Put on your raincoats, because it’s going to get soggy and, dare we say, epic!</p>
+            </div>
+            <div class="card-footer text-body-secondary">
+              <div style="margin-top: -5px">
+                <a rel="tag" href="/tags/fun" class="link-plain"><span class="badge text-bg-primary rounded-pill">Fun</span></a>
+                <a rel="tag" href="/tags/hygiene" class="link-plain"><span class="badge text-bg-primary rounded-pill">Hygiene</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="text-center mt-5">Created in Swift with <a href="https://github.com/twostraws/Ignite">Ignite</a></p>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/ignite-core.js"></script>
+  </body>
+</html>
