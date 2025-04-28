@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Appleseed" />
+    <meta name="generator" content="Ignite v0.5.2" />
+    <title>Help – My Awesome Site</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="/css/ignite-core.min.css" rel="stylesheet" />
+    <link href="https://www.example.com/help" rel="canonical" />
+    <script>(function() {
+    function getThemePreference() {
+        return localStorage.getItem('custom-theme') || 'auto';
+    }
+
+    function applyTheme(themeID) {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const lightThemeID = document.documentElement.getAttribute('data-light-theme') || 'light';
+        const darkThemeID = document.documentElement.getAttribute('data-dark-theme') || 'dark';
+        const actualThemeID = themeID === 'auto' ? (prefersDark ? darkThemeID : lightThemeID) : themeID;
+
+        document.documentElement.setAttribute('data-bs-theme', actualThemeID);
+        document.documentElement.setAttribute('data-theme-state', themeID);
+    }
+
+    function applySyntaxTheme() {
+        const syntaxTheme = getComputedStyle(document.documentElement)
+            .getPropertyValue('--syntax-highlight-theme').trim().replace(/"/g, '');
+
+        if (!syntaxTheme) return;
+
+        document.querySelectorAll('link[data-highlight-theme]').forEach(link => {
+            link.setAttribute('disabled', 'disabled');
+        });
+
+        const themeLink = document.querySelector(`link[data-highlight-theme="${syntaxTheme}"]`);
+        if (themeLink) {
+            themeLink.removeAttribute('disabled');
+        }
+    }
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        const currentTheme = getThemePreference();
+        if (currentTheme === 'auto') {
+            applyTheme('auto');
+            applySyntaxTheme();
+        }
+    });
+
+    const savedTheme = getThemePreference();
+    applyTheme(savedTheme);
+    applySyntaxTheme();
+})();
+</script>
+    <meta property="og:site_name" content="Hello World" />
+    <meta property="og:title" content="Help" />
+    <meta name="twitter:title" content="Help" />
+    <meta property="og:url" content="https://www.example.com/help" />
+    <meta name="twitter:domain" content="example.com" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:dnt" content="on" />
+  </head>
+  <body class="container">
+    <div style="padding-bottom: 55px">
+      <header>
+        <nav class="fixed-top navbar navbar-expand-md" style="background-color: rgb(44 62 80 / 100%)">
+          <div class="container">
+            <a href="/" class="d-inline-flex align-items-center navbar-brand"><img src="/images/logo.svg" alt="Brush &amp; Bark" style="width: min(60vw, 200px); height: 100.0%" /></a>
+            <button type="button" class="navbar-toggler btn" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div id="navbarCollapse" class="collapse navbar-collapse">
+              <ul class="navbar-nav mb-2 mb-md-0 col justify-content-end">
+                <li class="nav-item"><a href="/services" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="/reviews" class="nav-link">Reviews</a></li>
+                <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="/help" class="nav-link active" aria-current="page">Help</a></li>
+                <li class="nav-item"><a href="/contact" class="nav-link">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </div>
+    <div>
+      <h1 class="mt-4" style="font-weight: 900; width: 90.0%">HELP</h1>
+      <div id="accordionhYNSH" class="accordion" style="width: 90.0%">
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button type="button" class="accordion-button  btn" data-bs-toggle="collapse" data-bs-target="#accordionhYNSH-itememREy" aria-expanded="true" aria-controls="accordionhYNSH-itememREy">What services do you offer at Brush &amp; Bark?</button></h2>
+          <div id="accordionhYNSH-itememREy" class="accordion-collapse collapse show">
+            <div class="accordion-body">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. id. Commodo, ad labore eiusmod est, eiusmod, et exercitation voluptate aute duis veniam duis anim aliquip ut tempor, qui dolore, irure occaecat eiusmod in, laboris qui reprehenderit cillum, non, ullamco. Exercitation eu veniam, cupidatat ut, duis eiusmod. Eu et nostrud fugiat eu eiusmod. Anim commodo in voluptate fugiat labore. Eiusmod sunt officia, do cupidatat. Quis proident excepteur nulla in, ea occaecat ad id eiusmod do aliqua nisi sint esse dolore. Magna voluptate quis non. Deserunt eiusmod cupidatat minim sed. Ea mollit eiusmod dolore aliqua. Aliqua non pariatur fugiat aliqua id excepteur ad.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button type="button" class="accordion-button collapsed btn" data-bs-toggle="collapse" data-bs-target="#accordionhYNSH-itemnwhXG" aria-expanded="false" aria-controls="accordionhYNSH-itemnwhXG">How do I book an appointment?</button></h2>
+          <div id="accordionhYNSH-itemnwhXG" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. dolor velit. Quis consequat id eu sunt proident est, in, eu aute deserunt enim anim sed, est, enim sed fugiat. Ad sunt cillum cupidatat laboris, velit incididunt tempor anim nostrud id in minim sed magna, ut nostrud sint incididunt et enim, reprehenderit cupidatat ut officia. Excepteur ad nulla ullamco ex, non ullamco deserunt non eiusmod reprehenderit duis nisi pariatur reprehenderit dolor do voluptate commodo proident occaecat duis officia eu sed quis voluptate consequat eiusmod aute et. Ea tempor ex, nostrud exercitation qui labore. Aliquip exercitation labore do, incididunt. Ut commodo quis aute.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button type="button" class="accordion-button collapsed btn" data-bs-toggle="collapse" data-bs-target="#accordionhYNSH-itemBXHMk" aria-expanded="false" aria-controls="accordionhYNSH-itemBXHMk">What are your grooming prices?</button></h2>
+          <div id="accordionhYNSH-itemBXHMk" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. nisi proident cupidatat reprehenderit fugiat, magna exercitation. Cillum ullamco mollit in aute eu ad occaecat occaecat qui officia et cillum. Laboris aliquip ea. Aliqua ullamco excepteur ut consequat esse occaecat. Ullamco. Nostrud. Cupidatat enim. Laboris cillum, id laboris nisi mollit anim enim aliqua ut sint officia irure. Et nulla esse est fugiat mollit nostrud nostrud anim eu. Fugiat excepteur enim dolor mollit sed anim ullamco sint et. Sed labore voluptate dolore laboris minim reprehenderit consequat consequat culpa. Mollit veniam do dolore magna cillum veniam proident pariatur pariatur nulla nostrud enim enim ad.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button type="button" class="accordion-button collapsed btn" data-bs-toggle="collapse" data-bs-target="#accordionhYNSH-itemRVXcf" aria-expanded="false" aria-controls="accordionhYNSH-itemRVXcf">How long does a grooming session take?</button></h2>
+          <div id="accordionhYNSH-itemRVXcf" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. in, reprehenderit cillum, sint, sint. Officia minim cupidatat laboris occaecat do quis sunt sunt eiusmod et, cillum ut id dolore in, esse duis deserunt. In culpa deserunt quis excepteur. Veniam, et, magna qui ut eu. Exercitation occaecat in eu deserunt laboris do. Magna eiusmod anim proident qui in aliqua ex. Aliquip irure qui mollit consequat qui nulla occaecat exercitation culpa. Fugiat consequat occaecat, non reprehenderit aliquip ea non laborum. Nostrud deserunt, mollit incididunt, velit nulla laborum officia veniam ad, sunt cillum cillum cillum exercitation, tempor eu fugiat nulla nulla pariatur ut nisi.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button type="button" class="accordion-button collapsed btn" data-bs-toggle="collapse" data-bs-target="#accordionhYNSH-itemhuZ7a" aria-expanded="false" aria-controls="accordionhYNSH-itemhuZ7a">What do I need for my dog's grooming appointment</button></h2>
+          <div id="accordionhYNSH-itemhuZ7a" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. minim quis cillum. Id incididunt quis cillum est ullamco dolor in velit, nulla est aute. Irure anim. Ullamco magna eiusmod mollit cillum ut deserunt dolor. Consequat est, laborum mollit anim, ut. Nulla cillum dolor. Quis sint excepteur aliqua irure sint proident deserunt irure. Incididunt, dolore, eu aute sunt ex commodo sint esse, quis irure proident commodo. Dolor sed tempor ex excepteur nisi. Non duis eu voluptate exercitation, irure laborum excepteur aute exercitation duis velit. Sed cillum occaecat qui non sint eiusmod consequat nulla exercitation aute incididunt nulla veniam deserunt proident. Ad excepteur.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="text-center mt-5">Created in Swift with <a href="https://github.com/twostraws/Ignite">Ignite</a></p>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/ignite-core.js"></script>
+  </body>
+</html>
